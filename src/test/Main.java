@@ -21,6 +21,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
  
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -90,10 +91,38 @@ public class Main extends javax.swing.JFrame {
     private EventWaypoint getEvent() {
     return new EventWaypoint() {
         public void selected(MyWaypoint waypoint) {
+            
+            
+
+                        JSONArray data = null;
+                   try {
+                       FileReader reader = new FileReader("Data5.json");
+                       JSONParser parser = new JSONParser();
+                       data = (JSONArray) parser.parse(reader);
+                       reader.close();
+                   } catch (Exception e) {
+                       e.printStackTrace();
+                   }
             switch(waypoint.getName()) {
+                
                 case "City Walk":
-                    String message1 = "City Walk is a shopping and entertainment destination in Jeddah.";
-                    JOptionPane.showMessageDialog(null, message1, "City Walk Information", JOptionPane.INFORMATION_MESSAGE);
+                    
+                     // Access specific values
+        JSONObject employeeObject = (JSONObject) data.get(0);
+        JSONObject employeeDetails = (JSONObject) employeeObject.get("City walk ");
+        String name = (String) employeeDetails.get("name ");
+        String description = (String) employeeDetails.get("description");
+
+        // Create and display GUI
+        JLabel nameLabel = new JLabel("name: " +name);
+        JLabel desLabel = new JLabel("description: " + description);
+        JFrame frame1 = new JFrame();
+        frame1.add(nameLabel);
+        frame1.add(desLabel);
+        
+                   
+                    frame1.setSize(420,420);
+                    frame1.setVisible(true);
                     break;
                 case "Red sea":
                     String message2 = "The Red Sea is a seawater inlet of the Indian Ocean, lying between Africa and Asia.";
