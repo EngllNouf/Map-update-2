@@ -1,16 +1,45 @@
+
 [
-	{
-		"City walk": {
-			"Date ": ": Monday, 24 April 2023 - Wednesday, 07 June 2023",
-			"Opening Hours": "6pm-1am weekdays(gates close at 12 am"
-			
-		}
-	},
-	{
-		"employee": {
-			"firstName": "Brian",
-			"lastName": "Schultz",
-			"website": "example.com"
-		}
-	}
+  {
+      
+          "waypoints": 
+    {
+      "name": "City Walk",
+      "description": "Pedestrian area with shops, restaurants, and entertainment options",
+      "date": "2018"
+    },
+    
+      "name": "Red Sea",
+      "description": "Body of water with coral reefs and abundant marine life",
+      "date": null
+    },
+    {
+      "name": "Boulevard",
+      "description": "Scenic coastal road with views of the Red Sea and city skyline",
+      "date": "2017"
+    },
+    {
+      "name": "Roshn Waterfront",
+      "description": "New development with residential units, commercial spaces, and a marina",
+      "date": "Under construction"
+    },
+    {
+      "name": "Historical Jeddah Al-Balad",
+      "description": "UNESCO World Heritage Site with traditional architecture and historic buildings",
+      "date": "7th century"
+    },
+    {
+      "name": "Alhodaif Museum",
+      "description": "Private museum with Islamic art and artifacts",
+      "date": null
+    },
+    {
+      "name": "Islamic Arts Biennale",
+      "description": "Biennial event featuring contemporary Islamic art from around the world",
+      "date": "2017"
+    }
+    
+    
+          
+
 ]
