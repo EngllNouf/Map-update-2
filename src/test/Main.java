@@ -20,6 +20,7 @@ import waypoint.WaypointRender;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import javax.swing.JFrame;
  
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -100,7 +101,10 @@ public class Main extends javax.swing.JFrame {
                     break;
                 case "Boulevard":
                     String message3 = "The Boulevard is a popular leisure destination in Jeddah, with many restaurants and cafes.";
-                    JOptionPane.showMessageDialog(null, message3, "Boulevard Information", JOptionPane.INFORMATION_MESSAGE);
+                    JFrame frame = new JFrame();
+                    frame.setSize(420,420);
+                    frame.setVisible(true);
+                    //JOptionPane.showMessageDialog(null, message3, "Boulevard Information", JOptionPane.INFORMATION_MESSAGE);
                     break;
                 case "Roshn Waterfront":
                     String message4 = "Roshn Waterfront is a mixed-use development project in Jeddah, featuring residential, commercial, and recreational facilities.";
