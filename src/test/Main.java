@@ -1,5 +1,6 @@
 package test;
 
+import infor.Citywalk;
 import java.util.HashSet;
 import java.util.Set;
 import javax.swing.ImageIcon;
@@ -22,7 +23,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
- 
+import infor.*; 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -94,67 +95,42 @@ public class Main extends javax.swing.JFrame {
             
             
 
-                        JSONArray data = null;
-                   try {
-                       FileReader reader = new FileReader("Data5.json");
-                       JSONParser parser = new JSONParser();
-                       data = (JSONArray) parser.parse(reader);
-                       reader.close();
-                   } catch (Exception e) {
-                       e.printStackTrace();
-                   }
             switch(waypoint.getName()) {
                 
                 case "City Walk":
-                    
-                     // Access specific values
-        JSONObject employeeObject = (JSONObject) data.get(0);
-        JSONObject employeeDetails = (JSONObject) employeeObject.get("City walk ");
-        String name = (String) employeeDetails.get("name ");
-        String description = (String) employeeDetails.get("description");
+                    Citywalk c = new Citywalk();
+                    c.getClass();
 
-        // Create and display GUI
-        JLabel nameLabel = new JLabel("name: " +name);
-        JLabel desLabel = new JLabel("description: " + description);
-        JFrame frame1 = new JFrame();
-        frame1.add(nameLabel);
-        frame1.add(desLabel);
-        
-                   
-                    frame1.setSize(420,420);
-                    frame1.setVisible(true);
                     break;
                 case "Red sea":
-                    String message2 = "The Red Sea is a seawater inlet of the Indian Ocean, lying between Africa and Asia.";
-                    JOptionPane.showMessageDialog(null, message2, "Red Sea Information", JOptionPane.INFORMATION_MESSAGE);
+                   
+                   RedSea r = new  RedSea();
+                    r.getClass();
                     break;
                 case "Boulevard":
-                    String message3 = "The Boulevard is a popular leisure destination in Jeddah, with many restaurants and cafes.";
-                    JFrame frame = new JFrame();
-                    frame.setSize(420,420);
-                    frame.setVisible(true);
-                    //JOptionPane.showMessageDialog(null, message3, "Boulevard Information", JOptionPane.INFORMATION_MESSAGE);
+                    boulevard b = new boulevard();
+                    b.getClass();
+
                     break;
-                case "Roshn Waterfront":
-                    String message4 = "Roshn Waterfront is a mixed-use development project in Jeddah, featuring residential, commercial, and recreational facilities.";
-                    JOptionPane.showMessageDialog(null, message4, "Roshn Waterfront Information", JOptionPane.INFORMATION_MESSAGE);
+                case "Cyan Waterpark":
+                    CyanWaterpark cy = new CyanWaterpark();
+                    cy.getClass();
+
                     break;
-                case "Historical JeddahAl-Balad":
-                    String message5 = "Historical Jeddah Al-Balad is a UNESCO World Heritage Site, known for its traditional architecture and historical significance.";
-                    JOptionPane.showMessageDialog(null, message5, "Historical Jeddah Al-Balad Information", JOptionPane.INFORMATION_MESSAGE);
+                case "Historical Jeddah Al-Balad":
+                   balad ba = new balad();
+                     ba.getClass();
                     break;
               case "Alhodaif Museum":
-                    String message6 = "Alhodaif Museum is a private museum in Jeddah, showcasing the history and culture of Saudi Arabia.";
-                    JOptionPane.showMessageDialog(null, message6, "Alhodaif Museum Information", JOptionPane.INFORMATION_MESSAGE);
+                    alhodaif h =new alhodaif();
+                    h.getClass();
                     break;
                 case "Islamic Arts Biennale":
-                    String message7 = "Islamic Arts Biennale is an international art exhibition held in Jeddah, featuring contemporary Islamic art from around the world.";
-                    JOptionPane.showMessageDialog(null, message7, "Islamic Arts Biennale Information", JOptionPane.INFORMATION_MESSAGE);
+                    IslamicArtBiennale Art = new  IslamicArtBiennale();
+                    Art.getClass();
                     break;
                 default:
-                    String messageDefault = "No information available for this point";
-                    JOptionPane.showMessageDialog(null, messageDefault, "Point Information", JOptionPane.INFORMATION_MESSAGE);
-                    break;
+                    
             }
         }
     };
@@ -262,13 +238,13 @@ public class Main extends javax.swing.JFrame {
     private void cmdAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAddActionPerformed
           //بنات هنا نحدد الاماكن من الاحداثيات الي عندها اماكن تضيف في تست 5 و6 و7و 8
                      
-         addWaypoint(new MyWaypoint("City Walk", event, new GeoPosition(21.6350249753013, 39.10690119614673)));//City Walk
-          addWaypoint(new MyWaypoint("Red sea", event, new GeoPosition(21.627675282916634, 39.111098696146655)));
-          addWaypoint(new MyWaypoint("Boulevard", event, new GeoPosition(21.569792875340134, 39.1252796384737)));
-          addWaypoint(new MyWaypoint("Roshn Waterfront", event, new GeoPosition(21.603081811036954, 39.107458953817606)));
+           addWaypoint(new MyWaypoint("City Walk", event, new GeoPosition(21.6350249753013, 39.10690119614673)));//City Walk
+           addWaypoint(new MyWaypoint("Red sea", event, new GeoPosition(21.627675282916634, 39.111098696146655)));
+           addWaypoint(new MyWaypoint("Boulevard", event, new GeoPosition(21.569792875340134, 39.1252796384737)));
+           addWaypoint(new MyWaypoint("Cyan Waterpark", event, new GeoPosition(21.81299319014877, 39.11220159430016)));
            addWaypoint(new MyWaypoint("Historical Jeddah Al-Balad", event, new GeoPosition(21.4887593,39.185687)));
-          addWaypoint(new MyWaypoint("Alhodaif Museum", event, new GeoPosition(21.4881056,39.1870934)));
-          addWaypoint(new MyWaypoint("Islamic Arts Biennale", event, new GeoPosition(21.7014627, 39.1365453)));
+           addWaypoint(new MyWaypoint("Alhodaif Museum", event, new GeoPosition(21.4881056,39.1870934)));
+           addWaypoint(new MyWaypoint("Islamic Arts Biennale", event, new GeoPosition(21.7014627, 39.1365453)));
          
     }//GEN-LAST:event_cmdAddActionPerformed
 
@@ -280,32 +256,6 @@ public class Main extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-         //JSON parser object to parse read file
-      JSONParser jsonParser = new JSONParser();
-         
-        try (FileReader reader = new FileReader("Data5.json"))
-        {
-            //Read JSON file
-            Object obj = jsonParser.parse(reader);
- 
-            JSONArray employeeList = (JSONArray) obj;
-            System.out.println(employeeList);
-             
-            //Iterate over employee array
-         
- 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
     
         
         try {
@@ -330,7 +280,10 @@ public class Main extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main().setVisible(true);
-            }
+               
+   
+}
+            
         });
     }
 

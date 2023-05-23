@@ -1,11 +1,69 @@
 [
-    {"City walk ":{
+    {"place":{
       "name":"City walk",
-      "description": "Pedestrian area with shops, restaurants, and entertainment options",
-      "date": "2018"
+      "description": "City walk is one of largest zone of Jeddah Events Calandar with the utmost diverse experiences,featuring 10 main sub-zones presenting a fully integrated experience; a place for every member of the family, be it calmness and meditation, excitement and running, delicious cuisines and cafes, or just simply taking walks and enjoying the general vibes of the zone that’s suits all family members. ",
+       "location":"Ash Shati, Jeddah",
+      "website":"https://www.visitsaudi.com/en/events/city-walk"     ,
+      "date": "24 April 2023 - Wednesday, 07 June 2023"
         
         }
-    },{"employee":{
-        "firstName":"Brian","lastName":"Schultz","website":"example.com"}}
+    },{"place":{
+      "name":"Red sea",
+      "description": "City walk is one of largest zone of Jeddah Events Calandar with the utmost diverse experiences,featuring 10 main sub-zones presenting a fully integrated experience; a place for every member of the family, be it calmness and meditation, excitement and running, delicious cuisines and cafes, or just simply taking walks and enjoying the general vibes of the zone that’s suits all family members. ",
+      "location":"Ash Shati, Jeddah",
+      "date": "Open all the time"
+    }
+    },{"place":{
+        "name":"Cyan Waterpark",
+        "description":"The park is a fun place for families and friends to enjoy water and water games. The park consists of several recreational areas such as swimming pools, artificial rivers, water games and other recreational games, in addition to green areas and other facilities that provide comfort and relaxation for visitors. There are also restaurants and cafeterias in the park that offer a variety of food and drinks.",
+        "location":"4740 King Saud Road, Jeddah 23829",
+        "website":"https://www.cyanwp.com/"
 
+    }
+},{"place":
+    {
+        "name":"Boulevard",
+        "description":"Do not miss visiting one of the modern artifacts of the city, Jeddah Boulevard. The place will surprise you with its unique beauty and captivating architecture. Jeddah Boulevard extends over a spacious area in the Shati neighborhood. Hiking and coffee experiences. ",
+        "location":"5967 King Abdulaziz Branch Rd, Ash Shati, Jeddah 23414",
+        "shopping":"Fashion and fashion lovers can enjoy a unique and unparalleled shopping experience, through the high-end brands in the fashion world in Jeddah Boulevard, as the visitor is attention is drawn to the facade of the center and the presence of Prada, Gucci, Armani Junior, Balenciaga, Dolce & Gabbana, Coach, Jimicho, Dunhill. ",
+        "coffee":"There are many coffee shops such as Starbucks, Costa Coffee, Caribou Coffee, Second Cup, Tim Hortons.These cafes offer a wide range of hot and cold drinks, including coffee, tea, juices and soft drinks, in addition to pastries, sweets and snacks that are suitable for drinking drinks. "
+    }
+    },{"place":
+    {
+        "website":"https://jeddahalbalad.sa/",
+        "name":"Al-Balad The Historical Jeddah",
+        "description":"Historical Jeddah Al-Balad is a UNESCO World Heritage Site, a lively open-air museum that delights the senses, known for its traditional architecture and historical significance.",
+        "location":"F5PQ+734, Al-Balad, Unnamed Road, Jeddah 22236",
+        "shopping":"Alawi Market, Souq Al Badu, Barhat Al Shagara, Souq Al-Nada",
+        "food":"Shawarma Shaker, Baisi Ras Al Mandi, Al-Saidi Furn, Furn Al-Sheikh"
+    }
+    },{"place":
+    {
+        "website":"https://alhodaif-museum.business.site/",
+        "name":"Al-Hodaif Museum",
+        "description":"Alhodaif Museum is a private museum in Jeddah, the museum is dedicated to preserving and showcasing the rich cultural heritage of the region, with a particular focus on Islamic art and architecture.One of the highlights of the museum is the stunning collection of Islamic calligraphy, which features intricate and beautifully rendered examples of this ancient art form.",
+        "location":"7258 3190 Talat Ad Dakhakhni, Al-Balad, Jeddah 22236",
+        "WorkHours":"9am - 10pm"
+    }
+    }
+    
+    ,{"place":
+    {
+        "website":"https://alhodaif-museum.business.site/",
+        "name":"Al-Hodaif Museum",
+        "description":"Alhodaif Museum is a private museum in Jeddah, the museum is dedicated to preserving and showcasing the rich cultural heritage of the region, with a particular focus on Islamic art and architecture.One of the highlights of the museum is the stunning collection of Islamic calligraphy, which features intricate and beautifully rendered examples of this ancient art form.",
+        "location":"7258 3190 Talat Ad Dakhakhni, Al-Balad, Jeddah 22236",
+        "WorkHours":"9am - 10pm"
+    }
+    }
+    
+    
+
+            ,{"place":
+        {"website":"https:\/\/biennale.org.sa\/",
+        "name":"Islamic Arts Biennale",
+        "description":"Islamic Arts Biennale is an international art exhibition held in Jeddah, featuring contemporary Islamic art from around the world.",
+        "location":"Haj Parking A, Haj Terminal West, 2023 AIRPORT HAJJ ROAD"}
+            }
+    
 ]
