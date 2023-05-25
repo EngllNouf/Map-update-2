@@ -4,18 +4,24 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.FileReader;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JToggleButton;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -24,16 +30,23 @@ public class Citywalk extends JFrame {
      private JFrame frame = new JFrame();
      private JPanel panel = new JPanel(new GridLayout(1, 6));
      private JPanel panel2 = new JPanel(new GridLayout(6, 1));
+    private JScrollPane scrollPane;
     public Citywalk(){
 
-     frame.setSize(800, 800);
+     frame.setSize(600, 800);
      frame.setTitle("City Walk");
      frame.setLocationRelativeTo(null);
     
      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      panel2.setBackground(Color.WHITE);
+     
+    
+
+        // Create two buttons and add them to the panel
+       
      images();
      JsonFile();
+   // Set other properties of the frame
      frame.add(panel, BorderLayout.NORTH);
      frame.add(panel2, BorderLayout.CENTER);
      frame.getContentPane().add(panel2);
@@ -57,7 +70,7 @@ public class Citywalk extends JFrame {
                          JFrame frame = new JFrame("Citywalk");
                          frame.setSize(500, 500);
 
-                 
+                    
                          JLabel fullImage = new JLabel(image1);
                          frame.add(fullImage);
 
@@ -229,20 +242,43 @@ public class Citywalk extends JFrame {
                     JLabel labellocation = new JLabel("location: " + location);
                     labellocation.setFont(newFont);
                     JTextArea textArea = new JTextArea("description: " + description);
+                    
+                  
                     textArea.setLineWrap(true);
                     textArea.setBorder(null);
                     textArea.setEditable(false);
                     textArea.setFont(newFont);
                     JLabel labelwebsite = new JLabel("website: " + website);
+                       
+
+                    // Create a JToggleButton
+                   
+      
+
                     labelwebsite.setFont(newFont);
                     panel2.add(labelname);
                     panel2.add(labellocation);
                     panel2.add(textArea);
                     panel2.add(labelwebsite);
+
+                JButton res = new JButton("Reservation");
+                 panel2.add(res);
+                 res.addActionListener(new ActionListener() {
+
+                 public void actionPerformed(ActionEvent e) {
+                    // create an instance of the Res class
+                    Res res = new Res();
+                    res.setVisible(true);
+                 }
+              });
+
                     
 
    
     }
+    
+    
+     
     public static void main(String[] agrs){
         new Citywalk();
     }

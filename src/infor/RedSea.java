@@ -7,11 +7,14 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.FileReader;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -24,6 +27,7 @@ public class RedSea extends JFrame {
      private JFrame frame = new JFrame();
      private JPanel panel = new JPanel(new GridLayout(1, 6));
      private JPanel panel2 = new JPanel(new GridLayout(6, 1));
+      private JPanel panel3= new JPanel(new GridLayout(1, 6));
     public RedSea(){
 
      frame.setSize(800, 800);
@@ -32,8 +36,20 @@ public class RedSea extends JFrame {
     
      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      panel2.setBackground(Color.WHITE);
+      JButton button = new JButton("Reservation");
+        panel3.add(button);
+        add(panel3);
+         button.addActionListener(new ActionListener() {
+              
+         public void actionPerformed(ActionEvent e) {
+            // create an instance of the Res class
+            Res res = new Res();
+            res.setVisible(true);
+         }
+      });
      images();
      JsonFile();
+     frame.add(panel3, BorderLayout.SOUTH); 
      frame.add(panel, BorderLayout.NORTH);
      frame.add(panel2, BorderLayout.CENTER);
      frame.getContentPane().add(panel2);
@@ -241,7 +257,16 @@ public class RedSea extends JFrame {
                     panel2.add(labelwebsite);
                     
 
+                      JButton res = new JButton("Reservation");
+                        panel2.add(res);
+                        res.addActionListener(new ActionListener() {
 
+                        public void actionPerformed(ActionEvent e) {
+                           // create an instance of the Res class
+                           Res res = new Res();
+                           res.setVisible(true);
+                        }
+                     });
 
     
     
