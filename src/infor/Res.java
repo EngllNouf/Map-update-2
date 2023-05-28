@@ -10,12 +10,17 @@ package infor;
  * @author alhar
  */
 
+import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Res extends JFrame {
     private JLabel nameLabel,AgeLabel,emailLabel;
     private JTextField nameField,AgeField,EmailField;
+    private JButton checkButton;
+    private JLabel resultLabel;
     private JRadioButton aloneRadioButton;
     private JRadioButton groupRadioButton;
     private JLabel groupSizeLabel;
@@ -40,7 +45,7 @@ public class Res extends JFrame {
         AgeLabel = new JLabel("Age:");
         AgeField = new JTextField();
         emailLabel = new JLabel("Email:");
-        EmailField = new JTextField();
+        EmailField = new JTextField(20);
         
         panel.add(nameLabel);
         panel.add( nameField);
@@ -75,8 +80,36 @@ public class Res extends JFrame {
              panel2.add(randomGroupCheckbox);
             panel2.add(inviteTeamButton);
 
-        // Add the components to the frame
+        checkButton = new JButton("Check");
+        resultLabel = new JLabel();
         
+        checkButton.addActionListener(new ActionListener() {
+            
+            public void actionPerformed(ActionEvent e) {
+                String email = EmailField.getText();
+                if (isValidEmail(email)) {
+                    resultLabel.setText("Valid email syntax.");
+                    resultLabel.setForeground(Color.GREEN);
+                } else {
+                    resultLabel.setText("Invalid email syntax.");
+                    resultLabel.setForeground(Color.RED);
+                }
+            }
+        });
+        
+    
+
+            JLabel neighborhoodLabel = new JLabel("Neighborhood:");
+            String[] neighborhoods = {"Alnaseem neighborhood", "Naeem neighborhood", "Al Faisaliah neighborhood", "Beach neighborhood"};
+            JComboBox<String> neighborhoodDropdown = new JComboBox<>(neighborhoods);
+
+            // Add the neighborhood label and dropdown list to the panel
+            panel.add(neighborhoodLabel);
+            panel.add(neighborhoodDropdown);
+
+  
+        panel.add(checkButton);
+        panel.add(resultLabel);
         add(aloneRadioButton);
         add(groupRadioButton);
         add(panel);
@@ -121,6 +154,7 @@ public class Res extends JFrame {
             } else {
                 String groupType = randomGroup ? "random group" : "invited team";
                 System.out.println("Reservation: " + name + ", going with a group of " + groupSize + " (type: " + groupType + ")");
+                 
             }
             JOptionPane.showMessageDialog(this, "Reservation submitted successfully.");
         });
@@ -133,6 +167,11 @@ public class Res extends JFrame {
         setVisible(true);
     }
 
+
+     public boolean isValidEmail(String email) {
+        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+       return email.matches(regex);
+    }
     public static void main(String[] args) {
         new Res();
     }
