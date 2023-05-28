@@ -89,22 +89,22 @@ public class Res extends JFrame {
         switch (selectedNeighborhood) {
             case "Al Zahra":
                 // الكود ذا حق االلنك عشان يشغله 
-                JLabel linkLabel = new JLabel("link");
-                linkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-                linkLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-                    public void mouseClicked(java.awt.event.MouseEvent evt) {
-                        try {
-                            String link = "https://goo.gl/maps/VxXXL1KPTEFbMN9S8";
-                            JOptionPane.showMessageDialog(linkLabel, "Link: " + link);
-                        } catch (Exception ex) {
-                            // handle exception
-                        }
-                      
+  
+            JLabel linkLabel = new JLabel("link");
+            linkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            linkLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    try {
+                        Desktop.getDesktop().browse(new URI("https://goo.gl/maps/VxXXL1KPTEFbMN9S8"));
+                        JOptionPane.showMessageDialog(panel, "Link opened in browser.");
+                    } catch (IOException | URISyntaxException ex) {
+                        // handle exception
                     }
-                });// اللنك يطلع بنفس البنيل دي
+                }
+            });
 
-                                 panel.add(linkLabel);
-       
+panel.add(linkLabel);
+
       
             // باقي الاحياء هنا
                 break;
